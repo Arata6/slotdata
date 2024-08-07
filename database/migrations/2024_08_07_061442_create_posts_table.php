@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('palors', function (Blueprint $table) {
-            $table->foreignId('data_id')->constrained(); 
-            $table->foreignId('data_id')->constrained()->onDelete('cascade');
-            //
-            //
+        Schema::create('posts', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -24,8 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('palors', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('posts');
     }
 };
