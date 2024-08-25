@@ -10,10 +10,14 @@ class Post extends Model
     use HasFactory;
     
     protected $fillable = [
-        'day',
-        'event',
-        'participant',
-        'pickup',
+        'name',
+        'business hours',
+        'lottery',
+        'adress',
+        'lottery time',
+        'machine',
+        'exchange',
+        'recomendation',
     ];
     
     public function getPaginateByLimit(int $limit_count = 10)
