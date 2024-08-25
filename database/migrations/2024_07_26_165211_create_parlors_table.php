@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('parlors', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
-            $table->string('business hours', 50);
+            $table->string('businessHours', 50);
             $table->string('lottery', 50);
             $table->string('adress', 50);
-            $table->string('lottery time', 50);
-            $table->string('maichine', 50);
+            $table->string('lotteryTime', 50);
+            $table->string('machine', 50);
             $table->string('exchange', 50);
             $table->string('recomendation', 1);
             $table->timestamps();
