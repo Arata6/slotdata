@@ -1,12 +1,7 @@
-<!DOCTYPE HTML>
-<html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <title>Blog</title>
-    </head>
-    <body>
-        <h1>編集画面</h1>
-        <form action="/parlors" method="post">
+<x-app-layout>
+    <h1>編集画面</h1>
+    <div class="content">
+        <form action="/parlors/{{ $parlor->id }}" method="POST">
             @csrf
             @method('PUT')
             <div class="content__name">
@@ -18,7 +13,7 @@
                 <input type="text" name="parlor[businessHours]" placeholder="9：00～23：00" value="{{ old('parlor.businessHours') }}"/>
             </div>
             <div class="content__lottery">
-                <h2>抽選方法</h2>
+                <h2>グランドオープン日</h2>
                 <input type="text" name="parlor[lottery]" placeholder="　現地抽選" value="{{ old('parlor.lottery') }}"/>
             </div>
             <div class="content__adress">
@@ -37,14 +32,14 @@
                 <h2>交換率</h2>
                 <input type="text" name="parlor[exchange]" placeholder="　20円スロット：5.5枚交換" value="{{ old('parlor.exchange') }}"/>
             </div>
-            <div class="content_recomendation">
+            <div class="content__recomendation">
                 <h2>おすすめ度</h2>
                 <input type="text" name="parlor[recomendation]" placeholder="　長野県～" value="{{ old('parlor.recomendation') }}"/>
             </div>
             <input type="submit" value="保存"/>
         </form>
-        <div class="footer">
-            <a href="/parlors/{{ $parlor->id }}">戻る</a>
-        </div>
-    </body>
-</html>
+    </div>
+    <div class="footer">
+        <a href="/parlors/{{ $parlor->id }}">戻る</a>
+    </div>
+</x-app-layout>
