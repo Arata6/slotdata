@@ -1,10 +1,13 @@
 <x-app-layout>
-    <h1>データ入力画面</h1>
+    <h1　class='text-2xl'>データ入力画面</h1>
+    <h1 class='text-blue-600'>
+        <a href='/datas/create'>create</a>
+    </h1>
     <div class='datas'>
         @foreach ($datas as $data)
             <div class='data'>
                 <a href="/parlors/{{ $data->parlor->id }}">{{ $data->parlor->name }}</a>
-                <h2 class='date'>
+                <h2 class='date text-blue-600'>
                     <a href="/datas/{{ $data->id }}">{{ $data->date }}</a>
                 </h2>
                 <p class='event'>{{ $data->event }}</p>
@@ -20,7 +23,7 @@
             </div>
         @endforeach
     </div>
-    <a href='/datas/create'>create</a>
+    
     <div class='paginate'>
         {{ $datas->links() }}
     </div>

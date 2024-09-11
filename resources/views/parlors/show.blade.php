@@ -1,5 +1,5 @@
 <x-app-layout>
-    <h1 class="name">
+    <h1 class="name text-2xl">
         {{ $parlor->name }}
     </h1>
     <h1 class="event">
@@ -31,7 +31,7 @@
     <div class='datas'>
         @foreach ($datas as $data)
             <div class='data'>
-                <h2 class='date'>
+                <h2 class='date text-blue-600'>
                     <a href="/datas/{{ $data->id }}">{{ $data->date }}</a>
                 </h2>
                 <p class='event'>イベント内容：{{ $data->event }}</p>
@@ -41,7 +41,7 @@
             </div>
         @endforeach
     </div>
-    <div class="footer">
+    <div class="footer text-blue-600">
         <a href="/areas/{{$parlor->area->id}}">戻る</a>
     </div>
 </x-app-layout>
